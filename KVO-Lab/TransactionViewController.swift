@@ -10,10 +10,27 @@ import UIKit
 
 class TransactionViewController: UIViewController {
 
+    @IBOutlet weak var pickerView: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        pickerView.delegate = self
+        pickerView.dataSource = self
     }
     
 
+}
+extension TransactionViewController: UIPickerViewDataSource {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 10
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+}
+extension TransactionViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "user"
+    }
 }

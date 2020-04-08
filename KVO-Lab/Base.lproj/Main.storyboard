@@ -27,36 +27,45 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uxD-Uv-owJ">
+                                <rect key="frame" x="20" y="355" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLO-Eo-Xoo">
+                                <rect key="frame" x="0.0" y="102" width="414" height="216"/>
+                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0b-DQ-ost">
-                                <rect key="frame" x="177" y="206" width="61" height="21"/>
+                                <rect key="frame" x="177" y="326" width="61" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uxD-Uv-owJ">
-                                <rect key="frame" x="20" y="235" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="eLO-Eo-Xoo" firstAttribute="trailing" secondItem="uBe-t3-G2t" secondAttribute="trailing" id="08s-Dx-iG5"/>
                             <constraint firstItem="WPj-CR-dYe" firstAttribute="leading" secondItem="uBe-t3-G2t" secondAttribute="leading" constant="158" id="4SA-N2-I3s"/>
                             <constraint firstItem="j0b-DQ-ost" firstAttribute="leading" secondItem="uBe-t3-G2t" secondAttribute="leading" constant="177" id="5tZ-Nm-dOK"/>
+                            <constraint firstItem="eLO-Eo-Xoo" firstAttribute="leading" secondItem="uBe-t3-G2t" secondAttribute="leading" id="8fv-W3-zGC"/>
                             <constraint firstItem="uBe-t3-G2t" firstAttribute="trailing" secondItem="WPj-CR-dYe" secondAttribute="trailing" constant="157" id="9Nb-5U-ZjR"/>
+                            <constraint firstItem="j0b-DQ-ost" firstAttribute="top" secondItem="eLO-Eo-Xoo" secondAttribute="bottom" constant="8" id="C4n-0l-gMU"/>
                             <constraint firstItem="uxD-Uv-owJ" firstAttribute="leading" secondItem="uBe-t3-G2t" secondAttribute="leading" constant="20" id="Cde-l8-dNG"/>
                             <constraint firstItem="v4u-d0-rJS" firstAttribute="leading" secondItem="uBe-t3-G2t" secondAttribute="leading" constant="137" id="Da6-kv-aKZ"/>
                             <constraint firstItem="uBe-t3-G2t" firstAttribute="trailing" secondItem="uxD-Uv-owJ" secondAttribute="trailing" constant="20" id="RgK-We-dTu"/>
                             <constraint firstItem="uxD-Uv-owJ" firstAttribute="top" secondItem="j0b-DQ-ost" secondAttribute="bottom" constant="8" id="Vzy-sh-8tm"/>
+                            <constraint firstItem="eLO-Eo-Xoo" firstAttribute="top" secondItem="v4u-d0-rJS" secondAttribute="bottom" constant="8" id="alf-a6-Nqz"/>
                             <constraint firstItem="v4u-d0-rJS" firstAttribute="top" secondItem="WPj-CR-dYe" secondAttribute="bottom" constant="8" id="e74-2X-qZS"/>
                             <constraint firstItem="uBe-t3-G2t" firstAttribute="trailing" secondItem="j0b-DQ-ost" secondAttribute="trailing" constant="176" id="pcJ-Nu-Q8k"/>
                             <constraint firstItem="uBe-t3-G2t" firstAttribute="trailing" secondItem="v4u-d0-rJS" secondAttribute="trailing" constant="137" id="q3n-Et-HDI"/>
                             <constraint firstItem="WPj-CR-dYe" firstAttribute="top" secondItem="uBe-t3-G2t" secondAttribute="top" id="r6g-DT-deE"/>
-                            <constraint firstItem="j0b-DQ-ost" firstAttribute="top" secondItem="v4u-d0-rJS" secondAttribute="bottom" constant="112" id="uYQ-2D-4pb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uBe-t3-G2t"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Transaction" id="aKB-Qs-5vG"/>
+                    <connections>
+                        <outlet property="pickerView" destination="eLO-Eo-Xoo" id="AuL-Sd-I1W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gcz-WQ-jyR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,24 +161,38 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hze-1Q-ebK">
+                                <rect key="frame" x="166" y="357" width="82" height="30"/>
+                                <state key="normal" title="Create User"/>
+                                <connections>
+                                    <action selector="createUserButtonPressed:" destination="hzm-9t-7hB" eventType="touchUpInside" id="4St-hf-Whc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="x6h-z1-A7z" firstAttribute="leading" secondItem="3zY-ei-hYW" secondAttribute="leading" constant="20" id="8IB-Ay-aoS"/>
                             <constraint firstItem="Vnz-Is-9gh" firstAttribute="leading" secondItem="3zY-ei-hYW" secondAttribute="leading" constant="20" id="9Fc-Fq-rti"/>
                             <constraint firstItem="OEw-2K-Cgw" firstAttribute="top" secondItem="x6h-z1-A7z" secondAttribute="bottom" constant="8" id="9Zr-Bz-DLC"/>
+                            <constraint firstItem="Hze-1Q-ebK" firstAttribute="top" secondItem="OEw-2K-Cgw" secondAttribute="bottom" constant="81" id="JNu-6X-G7V"/>
                             <constraint firstItem="Vnz-Is-9gh" firstAttribute="top" secondItem="q8T-HZ-3Oa" secondAttribute="bottom" constant="8" id="Kae-ZY-Tnf"/>
                             <constraint firstItem="3zY-ei-hYW" firstAttribute="trailing" secondItem="OEw-2K-Cgw" secondAttribute="trailing" constant="20" id="NK5-wd-Zw5"/>
                             <constraint firstItem="q8T-HZ-3Oa" firstAttribute="top" secondItem="3zY-ei-hYW" secondAttribute="top" constant="68" id="NNg-Zb-vjy"/>
                             <constraint firstItem="Vnz-Is-9gh" firstAttribute="centerX" secondItem="TUK-Eq-y8b" secondAttribute="centerX" id="OYB-Tv-7yq"/>
+                            <constraint firstItem="3zY-ei-hYW" firstAttribute="bottom" secondItem="Hze-1Q-ebK" secondAttribute="bottom" constant="426" id="WOn-Cb-f48"/>
                             <constraint firstItem="3zY-ei-hYW" firstAttribute="trailing" secondItem="Vnz-Is-9gh" secondAttribute="trailing" constant="20" id="Xma-IK-0HT"/>
                             <constraint firstItem="x6h-z1-A7z" firstAttribute="top" secondItem="Vnz-Is-9gh" secondAttribute="bottom" constant="38" id="Xr4-dI-p0v"/>
                             <constraint firstItem="OEw-2K-Cgw" firstAttribute="leading" secondItem="3zY-ei-hYW" secondAttribute="leading" constant="20" id="hP2-Cy-6Pm"/>
                             <constraint firstItem="q8T-HZ-3Oa" firstAttribute="leading" secondItem="3zY-ei-hYW" secondAttribute="leading" constant="20" id="nll-GL-u0R"/>
+                            <constraint firstItem="Hze-1Q-ebK" firstAttribute="centerX" secondItem="TUK-Eq-y8b" secondAttribute="centerX" id="qRQ-TX-CuN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3zY-ei-hYW"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Create User" id="YJS-kE-qwt"/>
+                    <connections>
+                        <outlet property="balanceTextField" destination="OEw-2K-Cgw" id="aFw-0y-heM"/>
+                        <outlet property="usernameTextField" destination="Vnz-Is-9gh" id="bcm-YD-PW3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0wh-Sp-X3m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
